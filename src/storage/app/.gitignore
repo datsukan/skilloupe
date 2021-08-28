@@ -1,0 +1,6 @@
+*
+!icons/
+!public/
+!system/
+!system/*
+!.gitignore
