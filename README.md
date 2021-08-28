@@ -1,7 +1,13 @@
 # Skilloupe
 
-スキル共有を目的としたWebアプリケーションです。  
-個人で開発しています。
+Skilloupeはスキル共有を目的としたWebアプリケーションです。  
+管理者と利用者のユーザーを登録して、スキル情報の登録・更新・参照が可能です。
+
+|                                                                                                             |                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| ![1](https://user-images.githubusercontent.com/49118806/131217769-87f35e71-9bec-4b73-aaf9-53ae8565ae09.png) | ![2](https://user-images.githubusercontent.com/49118806/131217771-f0d8ceef-3a83-449e-b0f7-99d81eacf9a1.png) |
+| ![3](https://user-images.githubusercontent.com/49118806/131217772-1a9601c2-7660-44d2-b485-bece208efc17.png) | ![6](https://user-images.githubusercontent.com/49118806/131217853-9e56ec05-db77-4272-9830-845cd3508242.png) |
+| ![4](https://user-images.githubusercontent.com/49118806/131217774-e9671276-37e1-4ab7-8315-834fbc7d2541.png) | ![5](https://user-images.githubusercontent.com/49118806/131217775-bf859234-c24a-4ae4-90ee-7b9f3b7aa74f.png) |
 
 # Requirement \ 前提要件
 
