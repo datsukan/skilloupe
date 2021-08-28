@@ -14,8 +14,8 @@ class InitializationSeeder extends Seeder
         // 初期ユーザーとして管理ユーザーを登録（神達のアドレス）
         // ユーザーテーブル
         $insertUsersParam = [
-            'name'          => '神達 小楠',
-            'email'         => 'blue.earth.3543@gmail.com',
+            'name'          => '山田 太郎',
+            'email'         => 'abcd@example.com',
             'password'      => bcrypt('password'),
             'is_readonly'   => 0,
             'is_manage'     => 1,

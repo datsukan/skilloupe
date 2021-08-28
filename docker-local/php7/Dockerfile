@@ -17,10 +17,26 @@ RUN amazon-linux-extras install php7.3 -y && \
 
 RUN pecl install xdebug
 
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php -r "if (hash_file('sha384', 'composer-setup.php') === trim(file_get_contents('https://composer.github.io/installer.sig'))) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" \
+    && php composer-setup.php \
+    && php -r "unlink('composer-setup.php');" \
+    && mv composer.phar /usr/local/bin/composer
+
+RUN yum install -y tar
+
+RUN touch ~/.bashrc
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash \
+    && . ~/.nvm/nvm.sh \
+    && nvm install node
+
 RUN yum clean all
 
 RUN ln -sf /dev/stdout /var/log/php-fpm/access.log && \
     ln -sf /dev/stderr /var/log/php-fpm/error.log
+
+WORKDIR /usr/share/nginx/html
 
 EXPOSE 9000
 CMD ["php-fpm", "--nodaemonize"]

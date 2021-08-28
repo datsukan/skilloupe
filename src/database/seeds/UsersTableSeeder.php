@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
         for ($i = 1; $i <= 20; $i++) {
             $insertParam[] = [
                 'name'          => $faker->name,
-                'email'         => "blue.earth.3543+${i}@gmail.com",
+                'email'         => "abcd+${i}@example.com",
                 'password'      => bcrypt('password'),
                 'is_readonly'   => random_int(0, 1),
                 'is_manage'     => random_int(0, 1),

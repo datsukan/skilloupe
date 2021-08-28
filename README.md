@@ -11,7 +11,39 @@
 
 # Installation \ 導入
 
-※未記載
+1. ソースを取得する
+```bash
+git clone https://github.com/datsukan/skilloupe.git
+cd skilloupe
+```
+
+2. 環境変数ファイルを作成する
+```bash
+cp src/.env.example src/.env
+```
+
+3. Dockerコンテナを起動する
+```bash
+docker-compose up -d
+```
+
+4. Dockerコンテナに接続して初期設定を行う
+```bash
+docker exec -it skilloupe-php7 bash
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan db:seed --class=InitializationSeeder
+chown nginx storage/ -R
+npm i
+npm run dev
+```
+
+5. 画面が表示されて認証可能であることを確認する
+   1. Webブラウザで`http:localhost:8000`に接続する
+   2. メールアドレスが`abcd@example.com`、パスワードが`password`でログインする
+
+   問題なければ完了。
 
 # Usage \ 使用方法
 
@@ -35,6 +67,13 @@ docker-compose stop
 
 ```bash
 docker exec -it skilloupe-php7 bash
+```
+
+## サンプルデータの登録
+
+```bash
+docker exec -it skilloupe-php7 bash
+php artisan db:seed
 ```
 
 ## テスト実行
@@ -63,13 +102,13 @@ VSCode（拡張機能：PHP Debug 導入済み）のデバッグの実行（F5�
 5. [ 上部メニュー > データベース(D) > 新しい接続先 ]をクリックする
 6. `PostgreSQL`を選択して`次へ`をクリックする
 7. 下記の情報を入力する  
-   |項目|値|
-   |---|---|
-   |Host|localhost|
-   |Port|3306|
-   |Database|skilloupe|
-   |ユーザー名|root|
-   |パスワード|password|
+   | 項目       | 値        |
+   | ---------- | --------- |
+   | Host       | localhost |
+   | Port       | 3306      |
+   | Database   | skilloupe |
+   | ユーザー名 | root      |
+   | パスワード | password  |
 8. `テスト接続`をクリックする
 9. 接続に成功した場合は`接続の詳細`をクリックする
 10. `接続先名`に画面上で自分が分かりやすい名称を入力する
