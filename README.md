@@ -137,7 +137,7 @@ VSCode（拡張機能：PHP Debug 導入済み）のデバッグの実行（F5�
 
 # Author \ 著者
 
-神達 小楠
+datsukan
 
 # License \ ライセンス
 
